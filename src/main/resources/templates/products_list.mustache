@@ -1,0 +1,48 @@
+{{>layout/header}}
+
+<section class="flat-price-coin bg-browse">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="top-title center">
+							<h2>CRYPTOCURRENCY PRICES</h2>
+							<p>The Bitcoin ecosystem at a glance. Any of our service with free test credits or actual Bitcoins.</p>
+						</div>
+						<div class="table-price">
+							<div class="col-12 d-flex justify-content-end">
+								<a href="/crypto/add" class="btn btn-success">Create Currency</a>
+							</div>
+							<table>
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Name</th>
+										<th>Price</th>
+										<th>Description</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+								{{#currencies}}
+									<tr>
+										<td>{{id}}</td>
+										<td>{{name}}</td>
+										<td class="color-green">{{price}}</td>
+										<td>{{description}}</td>
+										<td>
+											<div class="tag-cloud">
+												<a href="/crypto/{{id}}" title="" class="btn btn-warning">EDIT</a>
+												<a href="/crypto/delete/{{id}}" title="" class="btn btn-danger">DELETE</a>
+											</div>
+										</td>
+									</tr>
+								{{/currencies}}	
+								</tbody>
+							</table>
+						</div><!-- /.table-price -->
+					</div><!-- /.col-md-12 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+</section>
+		
+{{>layout/footer}}

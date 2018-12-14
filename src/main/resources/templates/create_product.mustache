@@ -1,0 +1,77 @@
+{{>layout/header}}
+
+
+<div class="page-title">
+			<div class="title-heading">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="page-title-heading">
+								<h1 class="h1-title">Product Add/Edit</h1>
+							</div><!-- /.page-title-heading -->
+						</div><!-- /.col-md-12 -->
+					</div><!-- /.row -->
+				</div><!-- /.container -->
+			</div><!-- /.title-heading -->
+</div>
+
+<section class="flat-support">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="single-image">
+							<img src="/images/page/support.png" alt="">
+						</div>
+					</div><!-- /.col-md-6 -->
+					<div class="col-md-6">
+						<div class="wrap-support">
+							<div class="title">
+								<h1>Add or Edit Currency </h1>
+								<p>Fill out the form and get to work.</p>
+							</div>
+							<div class="form-user">
+							{{#currency}}
+								<form action="/crypto/add" name="productForm" id="productForm" method="post">
+									<div class="subscribe-content">
+										<div class="contact-form-name contact-form">
+											<input value="{{name}}" type="text" id="name" name="name" placeholder="Currency Name" required="">
+										</div>
+										<div class="contact-form-name contact-form mt-2">
+											<input value="{{price}}" type="number" id="price" name="price" placeholder="Price" required="">
+										</div>
+										<div class="contact-form-phone contact-form mt-2">
+											<input value="{{description}}" type="text" id="description" name="description" placeholder="Description">
+										</div>
+										    <input hidden value="{{id}}" type="text" name="id">
+										<div class="btn-contact-form mt-2">
+											<button type="submit">SUBMIT</button>
+										</div>
+									</div>
+								</form><!-- /form -->
+							{{/currency}}	
+							{{^currency}}	
+								<form action="/crypto/add" name="productForm" id="productForm" method="post">
+									<div class="subscribe-content">
+										<div class="contact-form-name contact-form">
+											<input type="text" id="name" name="name" placeholder="Currency Name" required="">
+										</div>
+										<div class="contact-form-name contact-form mt-2">
+											<input type="number" id="price" name="price" placeholder="Price" required="">
+										</div>
+										<div class="contact-form-phone contact-form mt-2">
+											<input type="text" id="description" name="description" placeholder="Description">
+										</div>
+										<div class="btn-contact-form mt-2">
+											<button type="submit">SUBMIT</button>
+										</div>
+									</div>
+								</form><!-- /form -->
+							{{/currency}}	
+							</div>
+						</div><!-- /.wrap-support -->
+					</div><!-- /.col-md-6 -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section>
+		
+{{>layout/footer}}

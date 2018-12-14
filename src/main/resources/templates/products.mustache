@@ -1,0 +1,39 @@
+{{>layout/header}}
+
+<section class="flat-news">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="top-title center">
+					<h2>PRODUCTS</h2>
+					<p>Digital currency</p>
+				</div>
+			</div>
+		</div><!-- /.row -->
+		<div class="row">
+			{{#currencies}}
+				<div class="col-md-4">
+					<article class="main-post news three-column">
+						<div class="featured-post" style="height: 200px;">
+							<a href="#" title="{{name}}">
+								<img src="images/coins/BitCoin.jpg" alt="">
+							</a>
+						</div><!-- /.featured-post -->
+						<div class="entry-content">
+							<h2>
+								<a href="#" title="">{{name}}</a>
+							</h2>
+							<ul class="meta-left">
+								<li class="post-view">
+									<i class="fa fa-money"></i> {{price}}
+								</li>
+							</ul>
+						</div><!-- /.entry-content -->
+					</article><!-- /.main-post -->
+				</div><!-- .col-md-4 -->
+			{{/currencies}}			
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section>
+
+{{>layout/footer}}
